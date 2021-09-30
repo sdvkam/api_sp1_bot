@@ -78,7 +78,7 @@ def send_message(message):
 
 
 def main():
-    current_timestamp = 0
+    current_timestamp = int(time.time())
     while True:
         logger.debug('Бот проснулся!')
         try:
@@ -96,7 +96,7 @@ def main():
                 else:
                     logger.info(f'Сообщение отправлено: {message}')
                 current_timestamp = int(time.time())
-            time.sleep(5 * 2)
+            time.sleep(20 * 60)
         except Exception as e:
             message = f'Бот упал с ошибкой: {e}'
             logger.error(message)
